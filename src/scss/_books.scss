@@ -1,0 +1,190 @@
+@import 'variables.scss';
+
+
+.section__books {
+	display: flex;
+	flex-wrap: wrap;
+	margin-top: 105px;
+	margin-bottom: 30px;
+}
+
+.books__sidebar {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 45px;
+	width: 35%;
+	margin: -50px;
+	background: #EFEEF6;
+	max-height: 690px;
+}
+
+.sidebar__category{
+    display: flex;
+    flex-direction: column;
+    gap:23px;
+}
+
+.sidebar__link, .sidebar__link--active {
+    transition: 250ms;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 15px;
+    text-transform: capitalize;
+    color:$color-grey;
+}
+
+.sidebar__link:hover, .sidebar__link--active:hover {
+    transform: scale(1.1);
+    cursor:pointer;
+}
+
+.sidebar__link::before, .sidebar__link--active::before {
+    vertical-align: middle;
+    margin-right: 14px;
+    display: inline-block;
+    content: " ";
+    width: 6px;
+    height: 6px;
+    border-radius:6px;
+}
+
+.sidebar__link--active {
+	font-weight: 700;
+	font-size: 16px;
+	line-height: 20px;
+	color: $color-black;
+	&::before {
+		background:$color-blue;
+	}
+}
+
+.books__list {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 75px;
+    row-gap: 70px;
+    flex-basis: 65%;
+}
+
+.book {
+	display: flex;
+	gap: 36px;
+	width: 423px;
+	height: 293px;
+	&__poster {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		box-shadow: 0px 24px 36px rgba(53, 49, 84, .28);
+		width: 212px;
+		height: 327px;
+	}
+	&__details {
+		height: 100%;
+		width: 175px;
+		display: flex;
+		flex-direction: column;
+		gap: 15px;
+		justify-content: center;
+	}
+	&__title {
+		font-weight: 700;
+		font-size: 16px;
+		line-height: 20px;
+		color: $color-black;
+	}
+	&__author {
+		font-family: "Open Sans";
+		font-style: normal;
+		font-weight: 400;
+		font-size: 10px;
+		line-height: 14px;
+		color: $color-grey;
+		text-transform: capitalize;
+		color: $color-grey;
+	}
+	&__description {
+		font-family: "Open Sans";
+		font-style: normal;
+		font-weight: 400;
+		font-size: 10px;
+		line-height: 14px;
+		color: $color-grey;
+		text-transform: capitalize;
+		color: $color-grey;
+	}
+	&__price {
+		font-weight: 700;
+		font-size: 13px;
+		line-height: 16px;
+		text-transform: uppercase;
+		color: $color-black;
+	}
+	&__rating {
+		display: flex;
+		gap: 10px;
+		&--stars {
+			display: inline-block;
+			font-size: 12px;
+			line-height: 1;
+		}
+		&--reviews {
+			font-family: "Open Sans";
+			font-style: normal;
+			font-weight: 400;
+			font-size: 10px;
+			line-height: 14px;
+			color: $color-grey;
+			text-transform: capitalize;
+			text-transform: none;
+		}
+	}
+}
+
+.books__load {
+	width: 175px;
+	margin: 80px auto;
+}
+.btn, .btn__load {
+	height: 45px;
+	width: 100%;
+	background: none;
+	border: 1px solid;
+	text-transform: uppercase;
+	line-height: 10px;
+	font-size: 8px;
+	font-weight: 700;
+	cursor: pointer;
+	transition: 250ms;
+}
+.btn__load {
+	border-color: $color-blueBtn;
+	color: $color-blueBtn;
+}
+.btn:hover {
+	transform: scale(1.1);
+	cursor: pointer;
+}
+.btn__buy {
+	padding: 18px 66px;
+	border: 1px solid $color-blueBtn;
+	text-decoration: none;
+	text-transform: uppercase;
+	cursor: pointer;
+	font-family: "Montserrat", sans-serif;
+	font-style: normal;
+	font-weight: 700;
+	color: $color-blueBtn;
+	line-height: 10px;
+	font-size: 8px;
+	background-color: white;
+	&.added {
+		border: 1px solid #EEEDF5;
+		color: $color-grey;
+	}
+	&.disabled {
+		color: gray;
+		cursor: default;
+	}
+}

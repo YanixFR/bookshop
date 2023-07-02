@@ -1,0 +1,32 @@
+@import 'variables.scss';
+
+
+* {
+	box-sizing: border-box;
+}
+:focus, :active {
+	outline: none;
+}
+a:focus, a:active {
+	outline: none;
+}
+a:visited {
+	text-decoration: none;
+}
+a:hover {
+	text-decoration: none;
+	font-weight: 900;
+	color: $color-black;
+	cursor: pointer;
+}
+ul li {
+	list-style: none;
+}
+a {
+	text-decoration: none;
+}
+body {
+	font-family: "Montserrat",sans-serif;
+	font-style: normal;
+	font-size: 12px;
+}
