@@ -5,6 +5,8 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const CompressionPlugin = require('compression-webpack-plugin');
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
+const TerserPlugin = require("terser-webpack-plugin");
+
 
 
 module.exports = {
@@ -22,7 +24,7 @@ module.exports = {
     },
     plugins: [
         new MiniCssExtractPlugin(),
-        new HtmlWebpackPlugin({template: '/index.pug'}),
+        new HtmlWebpackPlugin({template: './index.pug'}),
         new CleanWebpackPlugin(),
         new CssMinimizerPlugin(),
         new CopyWebpackPlugin({
@@ -87,6 +89,7 @@ module.exports = {
         minimizer: true,
         minimizer: [
             new CssMinimizerPlugin(),
+            new TerserPlugin(),
         ],
     },
 }
